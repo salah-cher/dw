@@ -1,0 +1,10 @@
+log4j.appender.LOG=org.apache.log4j.RollingFileAppender
+log4j.appender.LOG.File=/opt/log/dw/dw_server/dw_server.log
+log4j.appender.LOG.Append=true
+log4j.appender.LOG.MaxFileSize=5MB
+log4j.appender.LOG.MaxBackupIndex=4
+log4j.appender.LOG.layout=org.apache.log4j.TTCCLayout
+log4j.appender.LOG.layout.ContextPrinting=true
+log4j.appender.LOG.layout.DateFormat=ISO8601
+log4j.appender.LOG.layout.TimeZone=GMT
+log4j.rootCategory=DEBUG,LOG

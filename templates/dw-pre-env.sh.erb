@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DW_SERVER=y; export DW_SERVER
+
+DW_SERVER_JOPT="-server -Xms512m -Xmx1024m -XX:+UseParallelGC"; export DW_SERVER_JOPT
+#DW_SERVER_JOPT="-client -verbose:gc -Xms512m -Xmx1024m"; export DW_SERVER_JOPT
+#DW_SERVER_JOPT="-client -verbose:gc -Xms512m -Xmx1024m -XX:+UseParallelGC"; export DW_SERVER_JOPT
+
+PG_DW_HOST=<%= @dw_db_host %>; export PG_DW_HOST
+PG_DW_DB=<%= @dw_db_name %>; export PG_DW_DB
+PG_DW_PORT=<%= @dw_db_port %>; export PG_DW_PORT
+PG_DW_USER=<%= @dw_db_user %>; export PG_DW_USER
+PG_DW_PASS=<%= @dw_db_password %>; export PG_DW_PASS
+
+# PG_DW_HOST=hathi; export PG_DW_HOST
+# PG_DW_DB=datawarehouse1; export PG_DW_DB
+# PG_DW_PORT=5432; export PG_DW_PORT
+# PG_DW_USER=dw; export PG_DW_USER
+
+PGTZ=UTC; export PGTZ
+

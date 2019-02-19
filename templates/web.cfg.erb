@@ -1,0 +1,33 @@
+# Add config from common.cfg
+<% @common_properties.each do |property| -%>
+<%= property %>
+<% end -%>
+<DBParms DW>
+<% @app_db_conf_common.each do |entry2| -%>
+   Nick          <%= entry2["db_nick"] %>
+   Host          <%= entry2["db_host"] %>
+   Port          <%= entry2["db_port"] %>
+   DBName        <%= entry2["db_name"] %>
+   Username      <%= entry2["db_user"] %>
+   Password      <%= @db_creds[entry2['db_nick']] %>
+</DBParms>
+<% end -%>
+#Add config for all complexes DBs  
+<% @source_db_cfg.each do |val| -%>
+<DBParms <%= val['db_descr'] %>>
+    Nick        <%= val['db_nick'] %>
+    Host        <%= val['db_host'] %>
+    Port        <%= val['db_port'] %>
+    DBName      <%= val['db_name'] %>
+    Username    <%= val['db_user'] %>
+    Password    <%= @db_creds[val['db_descr']] %>
+<% if val['db_sl'] && ! val['db_sl'].empty? -%>
+    SqlLog      <%= val['db_sl'] %>
+<% end -%>
+</DBParms>
+<% end -%>
+
+# Add Web config
+<% @web_properties.each do |property| -%>
+<%= property %>
+<% end -%>

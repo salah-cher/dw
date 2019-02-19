@@ -1,0 +1,9 @@
+# Add dw properties
+
+<% @dw_properties.each do |property| -%>
+<%= property %>
+<% end -%>
+#DB information for dlt
+dw.dlt.db.url=jdbc:postgresql://<%= @dw_db_host %>:<%= @dw_db_port %>/<%= @dw_db_name %>
+dw.dlt.db.user=<%= @dw_db_user %>
+dw.dlt.db.pass=<%= @dw_db_password %>

@@ -1,0 +1,38 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+umask 022
+ulimit -s unlimited
+
+JAVA_HOME=<%= @java_home %>
+export JAVA_HOME
+
+#JAVA_OPTS='<%= @java_opts %>'
+#export JAVA_OPTS
+
+PERL5LIB=/usr/lib64/perl5:/opt/dw/lrms-common/lib/perl:/usr/lib64/perl5/vendor_perl:/usr/lib64/perl5/vendor_perl/Bundle
+export PERL5LIB
+
+#JAVA_HOME=/usr/java/jre1.8.0_101 ; export JAVA_HOME
+
+MAILTO=alerts@afilias.info; export MAILTO
+LRMS_COMMON_HOME=$HOME/lrms-common; export LRMS_COMMON_HOME
+DW_HOME=$HOME/dw; export DW_HOME
+DW_ETC=$HOME/dw-etc; export DW_ETC
+DW_LOG=/opt/log/dw; export DW_LOG
+
+PATH=$PATH:$HOME/bin:/opt/dbs/pgsql_<%= @pg_ver%>/bin:$JAVA_HOME/bin
+#PATH=/opt/dbs/pgsql_935/bin:$JAVA_HOME/bin:$PATH
+export PATH
+
+unset USERNAME
+TZ=UTC ; export TZ
+PGTZ=UTC ; export PGTZ
+LC_ALL=C ; export LC_ALL
+unset LANG
